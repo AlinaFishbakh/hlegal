@@ -2,8 +2,7 @@ body {
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     margin: 0;
-        padding: 0;
-   
+    padding: 0;
 }
 main {
     border-radius: 0px 0px 12px 12px;
@@ -51,6 +50,9 @@ header > .contacts {
 a {
     color: #24A3FF;
     text-decoration: none;
+}
+.burger {
+    display: none;
 }
 .right-side {
    display: flex;
@@ -239,7 +241,7 @@ a.capslink {
     flex-wrap: wrap;
 }
 .services > div {
-flex-basis: calc((100% - 120px)/3);
+    flex-basis: calc((100% - 120px)/3);
 }
 .services h3 {
     color:  #24A3FF;
@@ -275,9 +277,13 @@ flex-basis: calc((100% - 120px)/3);
 }
 .slide {
     display: flex;
-    align-items: flex-start;
     border-radius: 12px;
     background: #F5F5FA;
+    overflow: hidden;
+}
+.slide-img {
+    min-width: 400px;
+    background: url(/images/sliderimage.png) 50% / cover no-repeat;
 }
 .slide-content {
     padding: 30px;
@@ -397,8 +403,8 @@ flex-basis: calc((100% - 120px)/3);
     gap: 30px;
 }
 .article-card {
-    width: calc((100% - 60px) /3);
-    border-radius: 8px 8px 0px 0px;
+    width: calc((100% - 60px) / 3);
+    border-radius: 8px;
     background: #FFF;
     overflow: hidden;
 }
@@ -469,8 +475,8 @@ footer {
     align-items: center;
     gap: 10px;
 }
- .footer-contacts .city-footer {
-color:#323264;
+.footer-contacts .city-footer {
+    color:#323264;
 }
 .footer-separator {
     background: #B3B3BA;
@@ -509,8 +515,10 @@ footer .phone {
 }
 .footer-contacts .mail {
     color:  #24A3FF;
-    font-weight: 700;
-     
+    font-weight: 700;    
+}
+footer > .copyright {
+    display: none;
 }
 
 @media (max-width: 1440px){
@@ -528,6 +536,9 @@ footer .phone {
     }
     footer {
         padding: 30px 60px;
+    }
+    .slider-container {
+        padding: 0 60px;
     }
 }
 @media (max-width: 1024px) {
@@ -566,7 +577,7 @@ footer .phone {
         overflow: auto;
     }
     .services > div {
-        flex-basis: calc((100% - 60px)/2);
+        flex-basis: calc((100% - 60px) / 2);
     }
     .clients-img div {
         width: 33.33%;
@@ -580,12 +591,128 @@ footer .phone {
     .article-card:last-child {
         width: 100%;
     }
+    .slide {
+        flex-direction: column;
+    }
+    .slide-img {
+        width: 100%;
+        min-height: 500px;
+    }
 }
 
-
-
-
-
-
-
-
+@media (max-width: 375px) { 
+    .slider-container {
+        padding: 0 30px;
+    }
+    header .right-side,
+    header .contacts .separator,
+    header .contacts .city,
+    header .contacts a {
+        display: none;
+    }
+    header .contacts {
+        position: absolute;
+        justify-content: space-between;
+        padding: 10px 15px;
+        left: 0;
+        right: 0;
+        top: 0;
+        height: 44px;
+        box-sizing: border-box;
+        background: rgba(245, 245, 250, 0.20);
+    }
+    header {
+        position: fixed;
+        padding: 0;
+    }
+    .fixed-header {
+        box-sizing: border-box;
+        position: absolute;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        top: 44px;
+        left: 0;
+        right: 0;
+        padding: 0 15px;
+        height: 57px;
+    }
+    .fixed-header img {
+        width: 70px;
+        height: 32px;
+    }
+    .splash h1 {
+        width: 315px;
+        margin: auto;
+        text-align: center;
+    }
+    .burger {
+        display: block;
+    }
+    .experience {
+        padding-left: 30px;
+        padding-right: 30px;
+        gap: 30px;
+        padding-bottom: 30px;
+    }
+    .experience p {
+        margin-bottom: 0;
+    }
+    .services-container {
+        padding: 0 30px;
+    }
+    .services-container h1 {
+        font-size: 30px;
+        margin: 10px 0 30px;
+    }
+    .services-container > h3 {
+        margin-top: 0;
+    }
+    .services-container .services > div {
+        flex-basis: 100%;
+    }
+    .services-container .services {
+        gap: 30px;
+    }
+    main {
+        margin-bottom: 50px;
+    }
+    .clients-img div {
+        width: 100%;
+    }
+    .clients-img {
+        max-height: 720px;
+        overflow: auto;
+    }
+    footer {
+        padding: 30px;
+    }
+    .footer-separator {
+        display: none;
+    }
+    footer > .copyright {
+        display: block;
+        margin-top: 30px;
+        text-align: center;
+    }
+    .contacts-container .copyright {
+        display: none;
+    }
+    .footer-contacts {
+        flex-direction: column;
+        align-items: center;
+        margin: auto;
+    }
+    .clients {
+        margin-bottom: 0;
+    }
+    .publications {
+        padding: 30px;
+    }
+    .publications .hero-text {
+        font-size: 30px;
+    }
+    .article-card {
+        width: 100%;
+    }
+}
