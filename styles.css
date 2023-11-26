@@ -12,6 +12,12 @@ main {
     margin-bottom: 80px;
     position: relative;
 }
+main.services-main {
+    padding-top: 176px;
+}
+main.services-main h1 {
+    margin-top: 0;
+}
 main:after {
     content:'';
     position: absolute;
@@ -46,6 +52,15 @@ header {
 }
 header > .contacts {
     display: none;
+}
+header .logo {
+    display: flex;
+    gap: 4px;
+    color: #FFF;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
 }
 a {
     color: #24A3FF;
@@ -147,6 +162,10 @@ button:hover {
 }
 .right-side nav a:hover {
    border-bottom: 2px solid #FFF;
+}
+.right-side nav a.active {
+    color: #F0145A;
+    border-bottom: 2px solid #F0145A;
 }
 .splash {
     background: url(/images/h-symbol.png);
@@ -605,6 +624,9 @@ footer > .copyright {
     header > .contacts .city {
         color: #B3B3BA;
     }
+    main.services-main {
+        padding-top: 280px;
+    }
     .right-side .contacts {
         display: none;
     }
@@ -758,5 +780,15 @@ footer > .copyright {
     }
     .article-card {
         width: 100%;
+    }
+    main.services-main {
+        padding-top: 132px;
+    }
+    header .logo {
+        font-size: 20px;
+    }
+    header .logo svg {
+        height: 26px;
+        width: 12px;
     }
 }
